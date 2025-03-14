@@ -1,6 +1,6 @@
 # Project 1: Validation of the Ideal Gas Law via Molecular Dynamics Simulations
 
-This project aims to validate the ideal gas law, \( PV = nRT \), using molecular dynamics (MD) simulations. By employing the provided input file `in.ar.lj.lp.txt`, we conduct NVE simulations in a 3D box containing atoms at various fixed temperatures. After each simulation, pressure and temperature data are extracted and analyzed to evaluate the system's adherence to the ideal gas law. Additionally, simulations are repeated at different temperatures to explore deviations from ideal gas behavior, particularly at lower temperatures.
+This project aims to validate the ideal gas law, $PV = nRT$, using molecular dynamics (MD) simulations. By employing the provided input file `in.ar.lj.lp.txt`, we conduct NVE simulations in a 3D box containing atoms at various fixed temperatures. After each simulation, pressure and temperature data are extracted and analyzed to evaluate the system's adherence to the ideal gas law. Additionally, simulations are repeated at different temperatures to explore deviations from ideal gas behavior, particularly at lower temperatures.
 
 ---
 
@@ -25,16 +25,14 @@ The analysis examines initial temperatures (`tinitial`) ranging from 0.5 to 4.0 
 
 The following plot visualizes these findings:
 
-![Figure 1: Plot of Mean Pressure (\( P \)) vs. Initial Temperature (\( T_{initial} \))](plot1.png)
+<img src="plot1.png" alt="Figure 1: Plot of Mean Pressure (\( P \)) vs. Initial Temperature (\( T_{initial} \))" width="800"/>
 
-The plot demonstrates a linear relationship of the form \( Y = aX \), with a high coefficient of determination (\( R^2 = 0.9898 \)), indicating a strong correlation between the simulated data and the ideal gas law. This relationship can be expressed as:
+The plot demonstrates a linear relationship of the form $Y = aX$, with a high coefficient of determination ($R^2 = 0.9898$), indicating a strong correlation between the simulated data and the ideal gas law. This relationship can be expressed as:
 
-\[
-Y = aX \\
-P = \frac{nR}{V} \cdot T  
-\]
+$$Y = aX$$
+$$P = \frac{nR}{V} \cdot T$$ 
 
-where \( a = \frac{nR}{V} \). However, deviations from the ideal gas law become apparent at lower temperatures due to several factors:
+where $a = nR/V$. However, deviations from the ideal gas law become apparent at lower temperatures due to several factors:
 
 1. **Intermolecular Forces Gain Significance:**  
    At lower temperatures, gas particles move more slowly, allowing attractive forces (e.g., van der Waals forces) to play a more prominent role. These forces reduce the effective pressure exerted by the gas on the container walls, leading to deviations from the ideal gas law.
@@ -62,10 +60,3 @@ These factors collectively explain the observed deviations at lower temperatures
 
 
 ---
-
-## Usage
-
-To run the simulation, use the following command:
-
-```bash
-lmp -in in.ar.lj.lp.txt
