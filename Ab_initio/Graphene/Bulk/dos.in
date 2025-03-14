@@ -1,0 +1,7 @@
+&dos
+    prefix='graphene'
+    degauss=0.01
+    Emin=-15.0,Emax=10.0,DeltaE=0.05
+    outdir='./OUT/'
+    fildos='graphene.dos.dat'
+/

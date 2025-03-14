@@ -1,0 +1,110 @@
+Project 0: Programms
+
+Download and install LAMMPS from: 
+https://rpm.lammps.org/windows/32bit/
+https://rpm.lammps.org/windows/64bit/ 
+
+After the installation, you can run LAMMPS by double clicking the mybatch file in each folder.
+You can edit the files using a notepad (I suggest Notepad++) and change the name of the executable or the input file.
+
+Download and install Ovito from: 
+https://www.ovito.org/windows-downloads/ 
+
+READ THE MANUAL:
+https://docs.lammps.org/Manual.html 
+https://docs.lammps.org/fix_nh.html
+
+Always pay attention to the commands and the parameters you are using!
+Check the manual to see what every little command and parameter does.
+
+Project 1: Checking the perfect gas law with MD
+
+The purpose is to run a simple simulation to check the perfect gas law. You can use the in.ar.lj.lp.txt input file, 
+which automatically creates a 3D box and fills it with atoms and performs a NVE run for a fixed temperature. 
+Visualise your results with Ovito (drag and drop the trajectory file produced by the dump command after the run is done).
+
+After each simulation you should get the value of the temperature and the pressure of the system vs the timestep. 
+Since you know the volume and the number of atoms then you can check the perfect gas law: 
+
+PV=nRT
+
+where P, V and T are the pressure, volume and temperature respectively; n is the amount of substance; and R is the ideal gas constant.
+
+Remember: n=N/(6.022×10^23 )
+
+where N is the number of atoms.
+Check if R and the pressure, volume and temperature are in the correct units! 
+The units of a specific run can be found next to the units command in the input file. 
+A list of the different units LAMMPS accepts as input and prints as output can be found here: https://docs.lammps.org/units.html 
+
+Repeat the process for a different temperature. What happens if the temperature is too low?
+
+
+Project 2: Choosing the right parameters for a MD simulation
+
+The purpose is to see how the timestep parameter affects the simulation. Using the project’s files, set an initial velocity field 
+to get a temperature of 600 K. Then vary the timestep from 0.1 fs to 100 fs (e.g. 0.1, 0.5, 1, 5, 10, 50, and 100 fs) and 
+execute NVE ensemble runs with a fixed temperature. 
+Plot the kinetic, potential and total energy vs the timestep and check for energy conversion (all info is in the log.lammps file).
+After each run, produce the temperature vs timestep plot. The relative variance of the temperature deviation must be within:
+
+σ_T/〈T〉 =√(2/3N)  
+
+where σ_T is the standard deviation of the temperature, T is the temperature of the run and N is the number of atoms in the model. 
+For example, for a model with 1000 atoms you should see an average deviation of about 3%. Details of how this fraction is derived 
+can be found in the presentation Temperature fluctuations in canonical ensemble.pdf. You can calculate the standard deviation 
+in Excel using the STDEVA function. Repeat the process for a temperature of 1200 K. Does anything change?
+
+The second part is to look at the effect of the temperature damping parameter of the Nose-Hoover thermostat Tdamp. A Nose-Hoover thermostat 
+will not work well for arbitrary values of Tdamp. If Tdamp is too small, the temperature can fluctuate wildly; if it is too large, 
+the temperature will take a very long time to equilibrate. 
+A simple way to calibrate Tdamp is via using an immediate variable expression accessing the thermo property dt, which is the 
+length of the time step. Example: $(50.0*dt).
+
+You will follow the same procedure as previously using the ideal timestep you found,  but simulating a NVT ensemble this time. 
+In the Tdamp parameter you can give values $(50.0*dt), $(100.0*dt), $(200.0*dt) and $(500.0*dt), produce the temperature vs 
+step plots and calculate the standard deviation of the temperature for each case.
+
+What are the optimal timestep and Tdamp parameters for your runs?
+
+Run the exercise twice: once for a light material (e.g. Ni or Cu) and then for a heavy material (e.g. Pt or Au).
+Is there a difference?
+
+Notes:
+	At the beginning of each run you will see an area that has sharp temperature changes and then the situation normalizes. 
+	This is the part where the program tries to equilibrate. This part is OK to ignore.
+	You can use different seeds each time (the 12345 in the file) to get a variety of results as well.
+	You can use different temperatures than the ones suggested, which ideally should be in the 300-1200K range. 
+	Remember that the runs will be under constant temperature, so Tstart and Tstop will be the same.
+	You have about 10 runs to do, so adjust the run command accordingly. Remember: we want them to last as long as possible, 
+	but we don't want your computers to catch fire either. You can do an initial run to see how much real time e.g. 10,000 
+	steps take you, and then proceed accordingly. DO YOUR TESTS!
+	If you run LAMMPS serially you can run several at once! If e.g. your computer has an 8-core processor, you can run 8 runs at the same time!
+
+
+Project 3: NP melting
+
+Melt the NPs with the optimized timestep and Tdamp values you selected from the previous steps! Start at 300K and stop at 1000K. 
+Temperature should rise at rates of 10-20K/ns.
+Watch your NP melt in Ovito (drag and drop the file produced by the dump command after the run is done). Your file should be large 
+enough to provide detail, but not huge so that Ovito can still handle it. Control the size via the parameters of the dump command.
+Produce the step vs potential energy graph and notice the jump in potential energy when the NP melts. Define the melting point from 
+the potential energy vs timestep plot and/or the crystallization degree from the CNA analysis in Ovito (Add modification > Common neighbor analysis), 
+which allows you to see how many atoms are recognized as crystalline and how many as amorphous.
+Find the melting temperature of the 309-, 561-, and 923-atom NPs and produce the melting temperature vs NP size plot. 
+Does it look like the one expected from theory (https://en.wikipedia.org/wiki/Melting-point_depression)?
+
+
+Project 4: Monte Carlo vs Molecular Dynamics
+
+The purpose is to work with the Monte Carlo method and see how it differs from molecular dynamics. We will perform 2 simulations 
+on an amorphous metallic alloy nanoparticle of 923 atoms. The runs will be under a constant temperature of 400K and we will see 
+what result each method comes up with after the same number of steps. It is advisable to make the runs last as long as you can.
+
+The command we call Monte Carlo with is fix atom swap in addition to the fix nvt command. For its syntax you can see 
+here: https://docs.lammps.org/fix_atom_swap.html. For a theoretical introduction to Monte Carlo, you can see the attached presentations.
+
+The creation of amorphous nanoparticles can be done with the create atoms command of LAMMPS. Alternatively, if you are lazy, 
+you can use the files in the project folder. 
+
+Can md jump over the obstacles that MC jumps over? Can MC give the time evolution of the system?

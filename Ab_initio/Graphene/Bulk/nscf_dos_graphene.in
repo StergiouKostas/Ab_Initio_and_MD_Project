@@ -1,0 +1,26 @@
+&control
+    calculation='nscf',
+    prefix='graphene',
+    tstress = .true.
+    tprnfor = .true.    
+    pseudo_dir = '../Pseudo/',        
+    outdir='./OUT/',
+/
+ &system
+    ibrav= 4, celldm(1) =4.653159815, celldm(3)=5.0,
+    nat= 2, ntyp= 1, nbnd = 12,
+    ecutwfc =30., ecutrho =300., 
+    occupations='smearing',
+    smearing='gaussian',
+    degauss=0.05,
+ /
+ &electrons
+    conv_thr = 1.0d-6
+ /
+ATOMIC_SPECIES
+C  12.0107 C.pbe.UPF
+ATOMIC_POSITIONS {crystal}
+C    0.0000000    0.0000000    0.000000
+C    0.3333333    0.6666666    0.000000
+K_POINTS {automatic}
+80 80 1 0 0 0

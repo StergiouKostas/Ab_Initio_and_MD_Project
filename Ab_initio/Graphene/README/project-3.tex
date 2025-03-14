@@ -1,0 +1,134 @@
+\documentclass[11pt]{article}
+\usepackage[dvips]{epsfig}
+\usepackage[dvips]{graphicx}
+\usepackage{colordvi,color,colortbl}
+\usepackage{amsmath}
+\usepackage{amssymb,latexsym}
+\usepackage[top=1.0cm,bottom=1cm,left=2cm,right=2cm,foot=.5cm]{geometry}
+
+
+
+
+\begin{document}
+
+
+\thispagestyle{empty}
+
+
+\parbox[t]{1.\linewidth}{\centerline{\color{blue}\Large Molecular
+    Dynamics and {\it ab initio} School 2023}}
+\parbox[t]{1.\linewidth}{\hrulefill}
+
+
+\vspace{10pt}
+
+\centerline{\Huge{\color{red}{2D graphene}}}
+
+\vspace{10pt}
+
+{\bf{Introduction:}} For this project, you will investigate a 2
+dimensions (2D) material which is Graphene (you may suggest another 2D
+if you want for your project). We propose you to look at the
+properties of different kind of defects within graphene: Potassium
+adsorbed dopant, the so called 5-7 defect and a vacancy defect.\\
+
+
+The preliminary work is mandatory as well as one of the more advanded
+task as Potassium doping, 5-7 defect or vacancy defect.\\
+
+
+{\bf{Preliminary work:}}
+
+All the work proposed in this section may be done on a small computer
+(laptop). You may want to reserve the use of the cluster for the
+second part of this project.
+
+At first your are going to look at the convergence of a calculation on
+bulk material, {\it{i.e.}} you are going to consider the primitive cell
+of graphene which is a 2D hexagonal cell. There is $2$ carbon atoms
+within the primitive cell. You must be aware that graphene is a 2D
+material and thus a vacuum gap has to be introduce in the out of plane
+direction. As quantum espresso is using periodic conditions the
+dimension of the unit cell in this direction must be chosen large
+enough to ensure that the graphene sheet is not interacting with
+itself.
+
+
+The two main physical parameters which have to be tuned carefully are
+the energy cut-off (mainly the plane wave cut-off) corresponding to
+the parameter {\texttt{ecutwfc}} and the k-points sampling of the
+Brillouin zone (parameter {\texttt{K\textunderscore
+    POINTS}}). Basically, you will have to redo the same calculation
+for increasing values of these parameters and look at the total energy
+of the system which is the the key physical quantity. The convergence
+is reached when the total energy is not varying anymore. Be aware that
+you need to relax the cell (the lattice parameter may also be
+monitored for the convergence) for each of your calculation (parameter
+{\texttt{calculation = 'vc-relax'}}).\\
+
+Once the optimal plane wave cut-off and k-points sampling have been
+found, you may compute and plot the Band structure and the density of
+states (DOS). Furthermore, you may check the dimension of the cell in
+the direction perpendicular to the graphene plane to check that the
+vaccum is large enough. The $c$ dimension of the cell is given by the
+parameter {\texttt{celldm(3)}}. Its value in Bohr corresponds to
+{\texttt{celldm(3)*celldm(1)}}. For this task, you should reduce the
+cell dimension in this direction step by step and look at the total
+energy and at the hydrostatic pressure and see, at which point, a
+significant change is observed.\\
+
+
+{\bf{Defect:}}
+
+In this part you are going to introduce a defect in the graphene
+sheet.  For this study you will need to consider a supercell. A
+$4\times 4$ supercell is actually proposed for this project.  However,
+if you have limited access to a supercomputer,you may consider to
+define a smaller supercell in order to reduce the computational
+time. Three different kinds of defect have been selected for you:
+
+\begin{itemize}
+\item
+  Potassium atoms, when adsorbed on the graphene sheet, is leading to
+  n type doping. A charge transfer between the Potassium atom and the
+  graphene sheet is occurring leading to a shift of the Fermi level
+  toward the conduction band. You may look at the projected density of
+  states to investigate the localization effect induced by the dopant
+  and also to quantify the charge transfer. Indeed, the charge
+  tranfert (or charge carrier) is not an integer number of
+  electron. To quantify the carrier density, it is mandatory to
+  integrate the DOS from the top of the valence band (for graphene it
+  is corresponds to the tip of the dirac cone) to the Fermi level. You
+  will need to write your own code for that.\\
+
+  
+\item
+  The 5-7 defect (also called Stone-Wales) corresponds to a rotation
+  of 2 carbon atoms leading to the occurrence of 2 pentagons and 2
+  heptagones. This is a very common defect within graphene. For this
+  defect you may compute the DOS and the projected density of states
+  (PDOS) to observe some localization effect for the atoms close to
+  the defect.
+  
+\item
+  Another common defect within graphene corresponds to vacancies. We
+  propose to study the effect of a single vacancy within the graphene
+  sheet. Single vacancy is not the most stable one (di-vacancy is
+  actually more stable and its leading to a pentagon
+  reconstruction). You may investigate this reconstruction and look at
+  the variation of the bond lengths. you may also compute the DOS and
+  the projected density of states (PDOS) to observe some localization
+  effect for the atoms close to the defect.
+
+
+  \vspace{5pt}
+
+\end{itemize}
+
+
+All endeavours/initiatives are strongly encouraged. If you need help,
+you may request a zoom meeting with myself. Just email me
+{\texttt{christophe.adessi@univ-lyon1.fr}} to make an appointment.
+
+
+\end{document}

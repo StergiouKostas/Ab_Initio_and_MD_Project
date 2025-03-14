@@ -1,0 +1,1 @@
+START lmp_serial.exe -in input.txt

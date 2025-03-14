@@ -1,0 +1,65 @@
+[1740660275.304864] [cn1:1554740:0]          parser.c:1906 UCX  WARN  unused env variable: UCX_ROOT (set UCX_WARN_UNUSED_ENV_VARS=n to suppress this warning)
+
+     Program DOS v.7.1 starts on 27Feb2025 at 14:44:35 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI & OpenMP), running on       6 processor cores
+     Number of MPI processes:                 6
+     Threads/MPI process:                     1
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       6
+     54442 MiB available memory on the printing compute node when the environment starts
+
+
+     Reading xml data from directory:
+
+     ./OUT/graphene.save/
+     Message from routine volume:
+     axis vectors are left-handed
+     file C.pbe.UPF: wavefunction(s)  2S 2P renormalized
+     file K.pbe.UPF: wavefunction(s)  3S renormalized
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= PBE
+                           (   1   4   3   4   0   0   0)
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min        1193     478    128               121059    30606    4386
+     Max        1194     479    129               121064    30611    4393
+     Sum        7159    2869    769               726363   183649   26331
+
+     Using Slab Decomposition
+
+
+     negative rho (up, down):  1.543E-05 0.000E+00
+
+     Gaussian broadening (read from input): ngauss,degauss=   0    0.010000
+
+
+     DOS          :      2.99s CPU      4.17s WALL
+
+
+   This run was terminated on:  14:44:39  27Feb2025            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=
+[1740660275.304799] [cn1:1554742:0]          parser.c:1906 UCX  WARN  unused env variable: UCX_ROOT (set UCX_WARN_UNUSED_ENV_VARS=n to suppress this warning)
+[1740660275.304886] [cn1:1554745:0]          parser.c:1906 UCX  WARN  unused env variable: UCX_ROOT (set UCX_WARN_UNUSED_ENV_VARS=n to suppress this warning)
+[1740660275.304805] [cn1:1554744:0]          parser.c:1906 UCX  WARN  unused env variable: UCX_ROOT (set UCX_WARN_UNUSED_ENV_VARS=n to suppress this warning)
+[1740660275.304785] [cn1:1554741:0]          parser.c:1906 UCX  WARN  unused env variable: UCX_ROOT (set UCX_WARN_UNUSED_ENV_VARS=n to suppress this warning)
+[1740660275.304659] [cn1:1554743:0]          parser.c:1906 UCX  WARN  unused env variable: UCX_ROOT (set UCX_WARN_UNUSED_ENV_VARS=n to suppress this warning)
