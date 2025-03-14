@@ -25,7 +25,7 @@ The analysis examines initial temperatures (`tinitial`) ranging from 0.5 to 4.0 
 
 The following plot visualizes these findings:
 
-![Figure 1: Plot of Mean Pressure (\( P \)) vs. Initial Temperature (\( T_{initial} \))](fig1.png)
+![Figure 1: Plot of Mean Pressure (\( P \)) vs. Initial Temperature (\( T_{initial} \))](plot1.png)
 
 The plot demonstrates a linear relationship of the form \( Y = aX \), with a high coefficient of determination (\( R^2 = 0.9898 \)), indicating a strong correlation between the simulated data and the ideal gas law. This relationship can be expressed as:
 
