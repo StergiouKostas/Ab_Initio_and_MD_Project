@@ -45,3 +45,19 @@ The results show that:
 - An **optimal range** for `Tdamp` appears to be between `50.0×dt` and `100.0×dt`, where the system achieves a balance between rapid equilibration and minimal energy fluctuations.
 
 Further analysis is needed to assess potential differences in the behavior of **light and heavy materials**, as their distinct properties may influence the system's energy dynamics and the effectiveness of the thermostat. This additional investigation could provide deeper insights into material-specific responses and help refine the choice of `Tdamp` for specific applications.
+
+--
+## Conclusion
+
+This study explored the effects of **timestep** and **temperature damping parameter (Tdamp)** on molecular dynamics (MD) simulations. Key findings include:
+
+1. **Timestep Optimization:**
+   - The optimal timestep was determined to be **2 fs**, balancing stability and computational efficiency. Smaller timesteps caused fluctuations, while larger ones introduced integration errors.
+
+2. **Tdamp Optimization:**
+   - Lower `Tdamp` values (e.g., `50.0×dt` to `100.0×dt`) led to faster equilibration with minimal energy fluctuations, while higher values caused persistent oscillations.
+
+3. **Material-Specific Considerations:**
+   - Further analysis is needed to assess how these parameters vary for different materials, particularly light vs. heavy elements.
+
+These results provide a foundation for stable and accurate MD simulations, with potential extensions to material-specific applications.
