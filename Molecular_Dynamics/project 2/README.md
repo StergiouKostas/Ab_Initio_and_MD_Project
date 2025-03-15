@@ -33,8 +33,15 @@ Key findings include:
 - Smaller timesteps (e.g., 0.1 fs and 0.5 fs) result in significant temperature fluctuations, indicating poor energy conservation and instability.
 - As the timestep increases to **2 fs, 3 fs, and 4 fs**, temperature variations become smoother and more stable, suggesting improved energy conservation and equilibration.
 - However, excessively large timesteps may introduce integration errors. Thus, the optimal timestep range for maintaining stability and accuracy lies between **2 fs and 3 fs**.
+- Based on the analysis, the **ideal timestep** for this system is determined to be **2 fs**, as it provides a balance between stability and computational efficiency.
 
----
+In this part of the study, we examine the effect of the temperature damping parameter (`Tdamp`) in a Nose-Hoover thermostat on energy stability for a system at 600 K. The results from this analysis are shown below, in the form of four consecutive plots:
 
-## Conclusion
-This project highlights the importance of selecting appropriate timesteps and Tdamp parameters in MD simulations. For Nickel (Ni), the optimal timestep was found to be **0.002 fs** for maintaining structural stability, while a range of **2 fs to 3 fs** ensures temperature stability and energy conservation. These findings underscore the need for careful parameter selection to achieve reliable and accurate simulation results.
+![Figure 5: Effect of Tdamp on Energy Stability](tdamp_effect.png)
+
+The results show that:
+- Lower `Tdamp` values, such as `50.0×dt` and `100.0×dt`, lead to **quicker equilibration** with **smaller energy fluctuations**.
+- Higher `Tdamp` values, such as `200.0×dt` and `500.0×dt`, cause **larger and more persistent oscillations**, indicating slower stabilization of the system's energy.
+- An **optimal range** for `Tdamp` appears to be between `50.0×dt` and `100.0×dt`, where the system achieves a balance between rapid equilibration and minimal energy fluctuations.
+
+Further analysis is needed to assess potential differences in the behavior of **light and heavy materials**, as their distinct properties may influence the system's energy dynamics and the effectiveness of the thermostat. This additional investigation could provide deeper insights into material-specific responses and help refine the choice of `Tdamp` for specific applications.
