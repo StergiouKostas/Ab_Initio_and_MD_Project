@@ -46,7 +46,7 @@ The results show that:
 
 Further analysis is needed to assess potential differences in the behavior of **light and heavy materials**, as their distinct properties may influence the system's energy dynamics and the effectiveness of the thermostat. This additional investigation could provide deeper insights into material-specific responses and help refine the choice of `Tdamp` for specific applications.
 
---
+---
 ## Conclusion
 
 This study explored the effects of **timestep** and **temperature damping parameter (Tdamp)** on molecular dynamics (MD) simulations. Key findings include:
