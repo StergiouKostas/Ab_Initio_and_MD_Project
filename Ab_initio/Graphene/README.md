@@ -43,11 +43,11 @@ Graphene is a single layer of carbon atoms arranged in a 2D hexagonal lattice st
 
 #### Convergence Plots
 **Figure 1: Total Energy vs `ecutwfc`**  
-<img src="total_energy_vs_ecutwfc.png" alt="Total Energy vs ecutwfc" width="600"/>
+<img src="total_energy_vs_ecutwfc.png" alt="Total Energy vs ecutwfc" width="600"/> \
 *The plot shows the convergence of total energy with respect to the plane-wave cutoff energy (`ecutwfc`). The optimal value of 30 RY ensures energy stabilization while minimizing computational cost.*
 
 **Figure 2: Total Energy vs `k-points`**  
-![Total Energy vs k-points](total_energy_vs_k_points.png)  
+<img src="total_energy_vs_k_points.png" alt="Total Energy vs k-points" width="600"/> \
 *The plot demonstrates the convergence of total energy as a function of `k-points` sampling. The chosen grid (8x8x1) balances accuracy and computational efficiency.*
 
 ## Key Findings
@@ -64,7 +64,7 @@ A plot of the allowed energy levels of electrons in a material as a function of 
 - Defects distort the Dirac cone.
 
 **Figure 3: Brillouin Zone of Graphene**  
-![Brillouin Zone](brillouin_zone.png)  
+<img src="brillouin_zone.png" alt="Brillouin Zone" width="600"/> \
 *The hexagonal Brillouin zone of graphene with high-symmetry points (K, Γ, M). The Dirac cones occur at the K-points.*
 
 ---
@@ -82,17 +82,12 @@ Due to simulation constraints, a vacuum layer is required to prevent artificial 
 Find the smallest `celldm(3)` where energy stabilizes and hydrostatic pressure ≈ 0.  
 
 **Figure 4: Total Energy vs `celldm(3)`**  
-![Energy vs celldm](total_energy_vs_celldm3.png)  
+<img src="total_energy_vs_celldm3.png" alt="Energy vs celldm" width="600"/> \
 *Energy convergence with respect to vacuum layer thickness.*  
 
 **Figure 5: Pressure vs `celldm(3)`**  
-![Pressure vs celldm](pressure_vs_celldm3.png)  
+<img src="pressure_vs_celldm3.png" alt="Pressure vs celldm" width="600"/> \
 *Hydrostatic pressure approaches zero at optimal vacuum size.*
-
----
-
-### Introduction to Defects
-Defects alter graphene’s electronic, mechanical, and thermal properties. This study focuses on **Potassium (K) doping**, which introduces charge carriers and modifies conductivity.
 
 ---
 
@@ -108,15 +103,15 @@ A plot of the number of electronic states at each energy level.
 - Defects cause peaks in DoS near the Fermi level.  
 
 **Figure 6: DoS of Pristine Graphene**  
-![Pristine DoS](density_of_states_vs_energy.png)  
+<img src="density_of_states_vs_energy.png" alt="Pristine DoS" width="600"/> \
 *V-shaped DoS with a zero-point at the Dirac energy.*  
 
 **Figure 7: DoS of K-Doped Graphene**  
-![K-Doped DoS](defected_dos_vs_energy.png)  
+<img src="defected_dos_vs_energy.png" alt="K-Doped DoS" width="600"/> \
 *Additional states near the Fermi level (n-type doping).*  
 
 **Figure 8: Projected DoS (PDOS)**  
-![Graphene PDOS](graphene_pdos_vs_energy.png)  
+<img src="graphene_pdos_vs_energy.png" alt="Graphene PDOS" width="600"/> \
 *Contributions from Carbon p-orbitals (pristine) and K s/p-orbitals (doped).*
 
 ---
@@ -129,8 +124,11 @@ A plot of the number of electronic states at each energy level.
 - Fermi energy shifts into the conduction band (metallic behavior).  
 
 **Figure 9: Fermi Level Comparison**  
-![Pristine](fermi_undefected.png) *Pristine* | ![K-Doped](fermi_defected.png) *K-Doped*  
-*Left: Fermi at Dirac point. Right: Fermi shifts into conduction band.*
+<div style="display: flex; justify-content: space-around;">
+  <img src="fermi_undefected.png" alt="Pristine Fermi" width="45%">
+  <img src="fermi_defected.png" alt="K-Doped Fermi" width="45%">
+</div> \
+*Left: Pristine graphene (Fermi at Dirac point). Right: K-doped graphene (Fermi in conduction band).*
 
 ---
 
