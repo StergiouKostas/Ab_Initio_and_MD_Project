@@ -43,7 +43,7 @@ Graphene is a single layer of carbon atoms arranged in a 2D hexagonal lattice st
 
 #### Convergence Plots
 **Figure 1: Total Energy vs `ecutwfc`**  
-![Total Energy vs ecutwfc](total_energy_vs_ecutwfc.png)  
+![Total Energy vs ecutwfc](total_energy_vs_ecutwfc.png){: width="300"}  
 *The plot shows the convergence of total energy with respect to the plane-wave cutoff energy (`ecutwfc`). The optimal value of 30 RY ensures energy stabilization while minimizing computational cost.*
 
 **Figure 2: Total Energy vs `k-points`**  
@@ -154,7 +154,7 @@ valence_top = minimize(integral, -0.7)['x'][0]  # Initial guess: -0.7eV
 fermi_level = 0.020  # eV
 I, I_err = quad(integral, valence_top, fermi_level)  # Integration
 
-
+```
 ## Carrier Density
 The charge transfer is quantified as follows:
 
@@ -162,7 +162,6 @@ The charge transfer is quantified as follows:
   **0.4733 electrons/supercell**  
 - For the primitive cell (divided by 16):  
   **0.0296 electrons/unit cell**
-```
 ---
 
 ## Conclusions
