@@ -118,17 +118,25 @@ A plot of the number of electronic states at each energy level.
 
 ### Fermi Level Shift
 **Pristine Graphene**:  
-- Fermi energy at the Dirac point (zero-gap semiconductor).  
+Fermi energy at the Dirac point (zero-gap semiconductor).  
 
 **K-Doped Graphene**:  
-- Fermi energy shifts into the conduction band (metallic behavior).  
+Fermi energy shifts into the conduction band (metallic behavior).  
 
 **Figure 9: Fermi Level Comparison**  
-<div style="display: flex; justify-content: space-around;">
-  <img src="fermi_undefected.png" alt="Pristine Fermi" width="45%">
-  <img src="fermi_defected.png" alt="K-Doped Fermi" width="45%">
-</div> \
-*Left: Pristine graphene (Fermi at Dirac point). Right: K-doped graphene (Fermi in conduction band).*
+<div style="display: flex; justify-content: center; gap: 20px; margin: 15px 0;">
+  <div style="text-align: center;">
+    <img src="fermi_undefected.png" alt="Pristine Fermi" width="400">
+    <p style="margin-top: 5px; font-style: italic;">(a) Pristine graphene</p>
+  </div>
+  <div style="text-align: center;">
+    <img src="fermi_defected.png" alt="K-Doped Fermi" width="400">
+    <p style="margin-top: 5px; font-style: italic;">(b) K-doped graphene</p>
+  </div>
+</div>
+<div style="text-align: center; font-style: italic; margin-top: 5px;">
+Comparison of Fermi level positions showing n-type doping effect
+</div>
 
 ---
 
