@@ -43,8 +43,7 @@ Graphene is a single layer of carbon atoms arranged in a 2D hexagonal lattice st
 
 #### Convergence Plots
 **Figure 1: Total Energy vs `ecutwfc`**  
-<img src="total_energy_vs_ecutwfc.png" alt="Total Energy vs ecutwfc" width="200"/>
-![Total Energy vs ecutwfc](total_energy_vs_ecutwfc.png)
+<img src="total_energy_vs_ecutwfc.png" alt="Total Energy vs ecutwfc" width="600"/>
 *The plot shows the convergence of total energy with respect to the plane-wave cutoff energy (`ecutwfc`). The optimal value of 30 RY ensures energy stabilization while minimizing computational cost.*
 
 **Figure 2: Total Energy vs `k-points`**  
